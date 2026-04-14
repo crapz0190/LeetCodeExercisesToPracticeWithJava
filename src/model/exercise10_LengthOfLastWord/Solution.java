@@ -1,0 +1,15 @@
+package model.exercise10_LengthOfLastWord;
+
+public class Solution {
+    public int lengthOfLastWord(String s) {
+        String[] words = s.trim().split("\\s+");
+        return words[words.length - 1].length();
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        System.out.println(solution.lengthOfLastWord("   fly me   to   the moon  "));
+    }
+}
