@@ -10,7 +10,7 @@ public class Solution {
                 return mid;
             } else if (nums[mid] < target) {
                 left = mid + 1;
-            } else if (nums[mid] > target) {
+            } else {
                 right = mid - 1;
             }
         }
