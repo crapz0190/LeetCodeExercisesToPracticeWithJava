@@ -9,9 +9,7 @@ public class Solution {
                 digits[i]++;
                 return digits;
             }
-
             digits[i] = 0;
-
         }
 
         int[] result = new int[digits.length + 1];
