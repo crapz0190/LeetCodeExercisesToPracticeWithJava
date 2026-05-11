@@ -48,24 +48,31 @@ class ListNode {
         this.val = val;
         this.next = next;
     }
-
-    @Override
-    public String toString() {
-        return val + " -> " +  next ;
-    }
 }
 
 class Main{
     public static void main(String[] args) {
-        Solution s = new Solution();
-        ListNode head = new ListNode(1);
-        head.next = new ListNode(2);
-        head.next.next = new ListNode(2);
-        head.next.next.next = new ListNode(4);
-        head.next.next.next.next = new ListNode(4);
-        head.next.next.next.next.next = new ListNode(6);
-        head.next.next.next.next.next.next = new ListNode(7);
-        System.out.println(head);
-        System.out.println(s.deleteDuplicates(head));
+        ListNode n5 = new ListNode(3);
+        ListNode n4 = new ListNode(3, n5);
+        ListNode n3 = new ListNode(2, n4);
+        ListNode n2 = new ListNode(1, n3);
+        ListNode head = new ListNode(1, n2);
+
+        System.out.println("Lista original:");
+        printList(head);
+
+        Solution sol = new Solution();
+        ListNode result = sol.deleteDuplicates(head);
+
+        System.out.println("\nLista sin duplicados:");
+        printList(result);
+    }
+
+    public static void printList(ListNode node) {
+        while (node != null) {
+            System.out.print(node.val + (node.next != null ? " -> " : ""));
+            node = node.next;
+        }
+        System.out.println();
     }
 }
